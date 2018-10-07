@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Steps necessary to get the application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - **2.3.1**, Rails Version - **5.1.6**
 
 * System dependencies
-
-* Configuration
+  * **run:** `bundle install` 
+  * **Prerequisite:** `sudo gem install foreman` or `gem install foremen`(To run rails server, worker process(_using delayed job_) & cron(_automically fetchs feeds_) in one go.
 
 * Database creation
+  * **Migration:** `rake db:migrate` to setup schema.
+  * **Seed:** `rake db:seed` populate the database tables. 
+  
+* To run the application paste in below command into your terminal within the app repo.
+```ruby
+foreman start
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### _Once rails server is started type in [`localhost:3000`](http://localhost:3000) into your browser._
