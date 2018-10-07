@@ -1,0 +1,32 @@
+<%= form_for(@feed) do |f| %>
+  <% if @feed.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@feed.errors.count, 'error') %> please fix the below errors:</h2>
+
+      <ul>
+      <% @feed.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='row'>
+    <div class='form-group col-xs-6 col-sm-4'>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='form-group col-xs-6 col-sm-4'>
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.submit  class: 'btn btn-primary btn-small', style: 'color: white' %>
+  </div>
+
+<% end %>

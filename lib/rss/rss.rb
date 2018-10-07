@@ -16,10 +16,9 @@ module RSS
 		private
 
 		def run
-			extract_item make_request! do |title, published|
-				feed.items.create(title: title, published: published)
+			extract_item make_request! do |attr|
+				feed.items.create(attr)
 			end
 		end
-
 	end
 end

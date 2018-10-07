@@ -7,10 +7,11 @@ module RSS
 
 		def extract_item(response)
 			response.try(:css, 'item').each do |data|
-				title = data.at("title").text
-				published = data.at("pubDate").text
+				url = data.at('link').text
+				title = data.at('title').text
+				p_date = data.at('pubDate').text
 
-				yield(title, published) if block_given?
+				yield(url: url, title: title, published_date: p_date) if block_given?
 			end
 		end
 	end

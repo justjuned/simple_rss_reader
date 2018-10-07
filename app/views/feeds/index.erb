@@ -1,0 +1,32 @@
+<%= content_for :title, '| List' %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Feeds</h1>
+<div class="table-responsive">
+  <table class="table table-sm table-striped table-bordered">
+     <thead class="thead-inverse">
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feeds.each do |feed| %>
+      <tr>
+        <td><%= feed.name %></td>
+        <td><%= feed.url %></td>
+        <td><%= link_to 'Show', feed, class: 'btn btn-primary btn-xs'%></td>
+        <td><%= link_to 'Edit', edit_feed_path(feed), class: 'btn btn-success btn-xs' %></td>
+        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Feed', new_feed_path, class: 'btn btn-primary btn-small', style: "color: white" %>
